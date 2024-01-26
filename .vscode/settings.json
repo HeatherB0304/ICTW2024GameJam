@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ICT Winter Game Jam.sln"
+    "dotnet.defaultSolution": "ICTW2024GameJam.sln"
 }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour{
 	[Header("Speed Variables")]
@@ -25,6 +24,9 @@ public class PlayerMovement : MonoBehaviour{
 
     private bool grounded = false;
 
+    
+    [SerializeField] private int playerIndex = 0;
+
     private void Awake() {
         TryGetComponent(out characterController);
     }
@@ -33,6 +35,10 @@ public class PlayerMovement : MonoBehaviour{
         GroundCheck();
         Gravity();
         Move();
+    }
+
+    public int GetPlayerIndex(){
+        return playerIndex;
     }
 
     private void Gravity(){
@@ -63,7 +69,7 @@ public class PlayerMovement : MonoBehaviour{
         return new Vector3(transform.position.x, transform.position.y - groundedOffset, transform.position.z);
     }
 
-    public void OnMove(InputAction.CallbackContext context) => currentMovementDirection = context.ReadValue<Vector2>();
+    public void SetInputVector(Vector2 movement) => currentMovementDirection = movement;
     
     private void Move(){
         float targetSpeed = movementSpeed;
