@@ -72,13 +72,17 @@ public class SC_MainMenu : MonoBehaviour
         #endif
     }
 
-    public void CastleSpaceLevel() {
-        SceneManager.LoadScene("Castle Space");
+    //Level Select
+    public void SelectLevelOne() 
+    {
+        SceneManager.LoadScene("Insert Scene Name Here");
     }
-    public void CastleHallLevel() {
-        SceneManager.LoadScene("Castle Halls");
+    public void SelectLevelTwo() 
+    {
+        SceneManager.LoadScene("Insert Scene Name Here");
     }
-    public void ThroneRoomLevel() {
-        SceneManager.LoadScene("Throne Room");
+    public void SelectLevelThree() 
+    {
+        SceneManager.LoadScene("Insert Scene Name Here");
     }
 }

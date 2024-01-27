@@ -248,6 +248,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterModelImage
       objectReference: {fileID: 0}
+    - target: {fileID: 2210743445307166574, guid: 149d027d33d68f8448e2aeef3b999ff1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectLevelOne
+      objectReference: {fileID: 0}
     - target: {fileID: 2218400429439397895, guid: 149d027d33d68f8448e2aeef3b999ff1,
         type: 3}
       propertyPath: m_Pivot.x
@@ -456,6 +461,11 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 5442064491901463425, guid: 149d027d33d68f8448e2aeef3b999ff1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectLevelThree
+      objectReference: {fileID: 0}
     - target: {fileID: 5546964475142171890, guid: 149d027d33d68f8448e2aeef3b999ff1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -562,6 +572,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709469203213423115, guid: 149d027d33d68f8448e2aeef3b999ff1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectLevelTwo
       objectReference: {fileID: 0}
     - target: {fileID: 7932668699736016388, guid: 149d027d33d68f8448e2aeef3b999ff1,
         type: 3}
