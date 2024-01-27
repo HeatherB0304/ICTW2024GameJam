@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Jarvis Folder/JarvisMainMenu.unity
+    guid: 114fe17b4675ec74eaeb2b92b3de2349
+  - enabled: 1
+    path: Assets/Taylor Folder/Lava Level.unity
+    guid: 71aabd8a8d2c3b347b17e630856b67e4
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 98b56f6a66670c14f9bd07e438cca060,
       type: 2}
