@@ -9,5 +9,5 @@ public abstract class PartyItemSO : ScriptableObject{
 
     public virtual void UseItem(Transform userTransfrom) { }
 
-    public virtual PartyItemObject SpawnItem(Vector3 position) { return null; }
+    public virtual PartyItemObject SpawnItem(Vector3 position, PartyItemSpawner parentSpawner) { return null; }
 }

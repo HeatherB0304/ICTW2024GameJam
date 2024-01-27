@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Bomb
   ItemLiveTime: 3
+  ItemCooldownTime: 0
   isGrabbable: 0
-  PartyGameObjectPrefab: {fileID: 4599938705172218729, guid: 6ff3d13b2c872bd41ad2ff1c5b35a611,
+  PartyGameObjectPrefab: {fileID: 4756658493687390811, guid: 6ff3d13b2c872bd41ad2ff1c5b35a611,
     type: 3}
-  knockBackStrength: 15
-  bombRadius: 15
-  bombDamage: 15
+  knockBackStrength: 60
+  bombRadius: 5
+  bombDamage: 10

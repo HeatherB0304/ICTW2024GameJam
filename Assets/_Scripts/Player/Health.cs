@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
 		currentHealth = maxHealth;
 	}
 
-	public void TakeDamage(float amount){
+	public void DealDamage(float amount){
 		currentHealth -= amount;
 		if(currentHealth <= 0){
 			OnDeath?.Invoke(this, EventArgs.Empty);

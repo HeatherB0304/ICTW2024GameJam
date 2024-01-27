@@ -9,9 +9,9 @@ public class StaffPartyItem : PartyItemSO{
 	[Header("Freeze Effect Variables")]
 	[SerializeField] private float freezeTimer;
 
-	public override PartyItemObject SpawnItem(Vector3 position){
+	public override PartyItemObject SpawnItem(Vector3 position, PartyItemSpawner parentSpawner){
 		PartyItemObject staffInstance = Instantiate(PartyGameObjectPrefab, position, Quaternion.identity);
-		staffInstance.SetupPartyObject(this);
+		staffInstance.SetupPartyObject(this, parentSpawner);
 
 		return staffInstance;
     }
