@@ -4,6 +4,7 @@ public class PlayerMovement : MonoBehaviour{
 	[Header("Speed Variables")]
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private float accelerationSpeed = 10f;
+    [SerializeField] private float rotationSpeed = 5f;
 
     [Header("Ground Check Variables")]
     [SerializeField] private float groundedOffset = -0.14f;
@@ -24,9 +25,15 @@ public class PlayerMovement : MonoBehaviour{
 
     private bool grounded = false;
 
+    private Camera mainCamera;
+
     private void Awake() {
         TryGetComponent(out characterController);
     }
+
+    private void Start() {
+		mainCamera = Camera.main;
+	}
 
     private void Update() {
         GroundCheck();
@@ -94,13 +101,22 @@ public class PlayerMovement : MonoBehaviour{
                 currentMovementDirection = input;
             }
             
-            inputDirection = transform.right * -input.y + transform.forward * input.x;
+            inputDirection = new Vector3(input.x, 0, input.y);
         }
         else{
             currentMovementDirection = Vector2.zero;
         }
 
         //Add vertical velocity to the calculation
-        characterController.Move(inputDirection * (currentSpeed * Time.deltaTime) + new Vector3(0f, verticalVelocity, 0f) * Time.deltaTime);
+        var targetVector = Quaternion.Euler(0, mainCamera.transform.eulerAngles.y, 0) * inputDirection;
+        
+        characterController.Move(targetVector * (currentSpeed * Time.deltaTime) + new Vector3(0f, verticalVelocity, 0f) * Time.deltaTime);
+        UpdateRotation(targetVector);
+    }
+
+    private void UpdateRotation(Vector3 movementDirection){
+        if(movementDirection.magnitude == 0) { return; }
+        var rotation = Quaternion.LookRotation(movementDirection);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationSpeed);
     }
 }
