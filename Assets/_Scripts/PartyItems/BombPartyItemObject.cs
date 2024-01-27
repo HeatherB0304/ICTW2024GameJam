@@ -14,7 +14,7 @@ public class BombPartyItemObject : PartyItemObject
         {
             // Get playerknockback
             var playerKnockback = player.GetComponent<PlayerKnockback>();
-            // Get the direction away from the player
+            // Get the direction toward from the player
             Vector3 knockBackDir = transform.position - player.transform.position + Vector3.up;
             playerKnockback.AddKnockBackToPlayer(-knockBackDir, bombPartyItem.knockBackStrength);
 
@@ -26,12 +26,11 @@ public class BombPartyItemObject : PartyItemObject
         DeletePartyItem();
     }
 
-    public void DeletePartyItem()
-    {
+    public override void DeletePartyItem(){
         // Instantiate the explosion prefab at the current position
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
         // Destroy the current object
-        Destroy(gameObject);
+        base.DeletePartyItem();
     }
 }
