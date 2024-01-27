@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 2
-  m_MaxPlayerCount: 2
+  m_MaxPlayerCount: 4
   m_AllowJoining: 1
   m_JoinBehavior: 0
   m_PlayerJoinedEvent:
@@ -670,10 +670,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partyItemsToSpawn:
   - {fileID: 11400000, guid: 1eadeec8c96376b459e43c8d2ee3a2d3, type: 2}
+  - {fileID: 11400000, guid: 77bf5a8a685f41f41a896d5b83a2e938, type: 2}
+  - {fileID: 11400000, guid: af6d6ee692720a34c8830628d8a02e35, type: 2}
   spawnInterval: 1.2
   maxItemsToSpawn: 5
   gizmosColor: {r: 0.12220478, g: 1, b: 0, a: 1}
-  spawnRadius: 28.75
+  spawnRadius: 28.4
 --- !u!1 &1876187689
 GameObject:
   m_ObjectHideFlags: 0
