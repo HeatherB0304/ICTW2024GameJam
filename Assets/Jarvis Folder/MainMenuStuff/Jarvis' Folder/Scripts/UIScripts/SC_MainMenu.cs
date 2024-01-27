@@ -75,7 +75,7 @@ public class SC_MainMenu : MonoBehaviour
     //Level Select
     public void SelectLevelOne() 
     {
-        SceneManager.LoadScene("Insert Scene Name Here");
+        SceneManager.LoadScene("Lava Level");
     }
     public void SelectLevelTwo() 
     {
