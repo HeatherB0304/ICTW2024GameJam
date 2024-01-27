@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 213236872065356973}
   - component: {fileID: 7936730866643778750}
   - component: {fileID: 2196525804921192970}
-  - component: {fileID: 4599938705172218729}
+  - component: {fileID: 6509792058917134196}
+  - component: {fileID: 4756658493687390811}
   m_Layer: 0
   m_Name: BombPartyItem
   m_TagString: Untagged
@@ -106,7 +107,34 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4599938705172218729
+--- !u!54 &6509792058917134196
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642139306197216779}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4756658493687390811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,6 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8642139306197216779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f3de6ab7bbb444083dc315de6d58a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4357c0d7c6f847848981c25bbc63c0e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 128

@@ -8,25 +8,23 @@ public class BombPartyItem : PartyItemSO{
 	public float bombRadius;
 	public float bombDamage;
 
-    public override PartyItemObject SpawnItem(Vector3 position){
-		PartyItemObject bombInstance = Instantiate(PartyGameObjectPrefab, position, Quaternion.identity);
-		bombInstance.SetupPartyObject(this);
-		BombCountdown(bombInstance);
+    public override PartyItemObject SpawnItem(Vector3 position, PartyItemSpawner parentSpawner){
+		PartyItemObject itemInstance = Instantiate(PartyGameObjectPrefab, position, Quaternion.identity);
+		itemInstance.SetupPartyObject(this, parentSpawner);
+		BombCountdown(itemInstance);
 
-		return bombInstance;
+		return itemInstance;
     }
 
-	private void BombCountdown(PartyItemObject bombPartyItemObject){
+	private void BombCountdown(PartyItemObject partyItemObject){
+		BombPartyItemObject bombPartyItem = partyItemObject as BombPartyItemObject;
 		//Display bomb radius
 		//Start bomb countdown
-		bombPartyItemObject.StartPartyItemCoroutine(GetBombCountdown(bombPartyItemObject.transform.position));
+		partyItemObject.StartPartyItemCoroutine(GetBombCountdown(bombPartyItem));
 	}
 
-	private IEnumerator GetBombCountdown(Vector3 bombPosition){
+	private IEnumerator GetBombCountdown(BombPartyItemObject bombPartyItemObject){
 		yield return new WaitForSeconds(ItemLiveTime);
-		//Explode
-		//TO-DO:
-		//Apply Knockback to any player within the radius
-		//Damage any player in the radius
+		bombPartyItemObject.Explode(this);
 	}
 }

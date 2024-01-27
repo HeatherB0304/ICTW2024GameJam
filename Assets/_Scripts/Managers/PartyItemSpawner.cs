@@ -28,6 +28,12 @@ public class PartyItemSpawner : MonoBehaviour{
 		StopAllCoroutines();
 	}
 
+	public void RemovePartyItem(PartyItemObject partyItemObject){
+		if(currentPartyItemsSpawned.Contains(partyItemObject)){
+			currentPartyItemsSpawned.Remove(partyItemObject);
+		}
+	}
+
     private void SpawnRandomPartyItem(){
 		if(currentPartyItemsSpawned.Count == maxItemsToSpawn){
 			StartCoroutine(PartyItemSpawnCorutine());
@@ -36,7 +42,7 @@ public class PartyItemSpawner : MonoBehaviour{
 
 		var randomPartyItemIndex = Random.Range(0, partyItemsToSpawn.Count);
 		Vector3 randomPartyItemPosition = GetRandomSpawnPosition();
-		currentPartyItemsSpawned.Add(partyItemsToSpawn[randomPartyItemIndex].SpawnItem(randomPartyItemPosition));
+		currentPartyItemsSpawned.Add(partyItemsToSpawn[randomPartyItemIndex].SpawnItem(randomPartyItemPosition, this));
 		StartCoroutine(PartyItemSpawnCorutine());
     }
 
