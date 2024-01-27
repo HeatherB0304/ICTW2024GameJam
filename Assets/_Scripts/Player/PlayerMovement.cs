@@ -24,9 +24,6 @@ public class PlayerMovement : MonoBehaviour{
 
     private bool grounded = false;
 
-    
-    [SerializeField] private int playerIndex = 0;
-
     private void Awake() {
         TryGetComponent(out characterController);
     }
@@ -35,10 +32,6 @@ public class PlayerMovement : MonoBehaviour{
         GroundCheck();
         Gravity();
         Move();
-    }
-
-    public int GetPlayerIndex(){
-        return playerIndex;
     }
 
     private void Gravity(){
