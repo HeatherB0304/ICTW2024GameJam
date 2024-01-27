@@ -17,3 +17,10 @@ MonoBehaviour:
   - {fileID: 6922397913154847386, guid: 678e5eb58097b1b42a4b5ef47ffaeffa, type: 3}
   - {fileID: 3061220238293443156, guid: ab913a9ecbd8cb74f934be6a4f091c15, type: 3}
   - {fileID: 8250113037700411775, guid: a10bd4d09f2a4154aa2aa9a245354389, type: 3}
+  - {fileID: 5061428758898498421, guid: c147c017165239c4d9d5b0f6419c5089, type: 3}
+  knightImages:
+  - {fileID: 21300000, guid: a9fb26bcb5c2a684a8d5b6bc43983cc4, type: 3}
+  - {fileID: 21300000, guid: 07ee4306eab8df344b24b8bad951ee37, type: 3}
+  - {fileID: 21300000, guid: c6928e9f6d45e3d4584e26033dc785b2, type: 3}
+  - {fileID: 21300000, guid: 7dded565bfb3e5f408b9a190cf9fe592, type: 3}
+  - {fileID: 21300000, guid: 279beb8f1a059a442bb6a9622c2809a1, type: 3}

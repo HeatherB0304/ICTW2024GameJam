@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4148821856820362339}
   - component: {fileID: 6912285746700887434}
   m_Layer: 5
-  m_Name: Level1Desc
+  m_Name: KnightSelectColorText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 5070370752892389460}
   - component: {fileID: 5097679096641531336}
   m_Layer: 5
-  m_Name: Level1Screenshot
+  m_Name: PlayerProfileBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2045713943560065008}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SC_MainMenu, Assembly-CSharp
         m_MethodName: SelectLevelOne
         m_Mode: 1
@@ -346,140 +346,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &985538888307435055
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 70313170149690494}
-  - component: {fileID: 5635332842100292139}
-  - component: {fileID: 1884228394423389883}
-  m_Layer: 5
-  m_Name: Level Select
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &70313170149690494
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985538888307435055}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4638577441800283067}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -584.49, y: 472}
-  m_SizeDelta: {x: 750, y: 150}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5635332842100292139
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985538888307435055}
-  m_CullTransparentMesh: 1
---- !u!114 &1884228394423389883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985538888307435055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Level Select:'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4288789718
-  m_fontColor: {r: 0.8396226, g: 0.7383096, b: 0.63103706, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 73.13
-  m_fontSizeBase: 73.13
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 5
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1617494799310767345
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +358,7 @@ GameObject:
   - component: {fileID: 7354245111704261770}
   - component: {fileID: 7687199609444224238}
   m_Layer: 5
-  m_Name: Level1Screenshot
+  m_Name: PlayerProfileBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,7 +508,7 @@ GameObject:
   - component: {fileID: 1031594511758627988}
   - component: {fileID: 3323458245948681642}
   m_Layer: 5
-  m_Name: Level1Screenshot
+  m_Name: Player4PlayerPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,7 +583,7 @@ GameObject:
   - component: {fileID: 7851560312600488240}
   - component: {fileID: 3530913099297828049}
   m_Layer: 5
-  m_Name: Level1Screenshot
+  m_Name: Player3PlayerPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -790,8 +656,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8772637878025975651}
   - component: {fileID: 3982265483023171725}
-  - component: {fileID: 1155810238427814596}
   - component: {fileID: 7502797666381237791}
+  - component: {fileID: 7310121941348125121}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -829,26 +695,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &1155810238427814596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2537591875911344700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!82 &7502797666381237791
 AudioSource:
   m_ObjectHideFlags: 0
@@ -945,6 +791,47 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7310121941348125121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537591875911344700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &2564426065525122378
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +844,7 @@ GameObject:
   - component: {fileID: 429414500048447799}
   - component: {fileID: 1214680436383765837}
   m_Layer: 5
-  m_Name: Level1Screenshot
+  m_Name: Player1PlayerPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1279,7 +1166,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2045713943560065008}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SC_MainMenu, Assembly-CSharp
         m_MethodName: SelectLevelOne
         m_Mode: 1
@@ -1513,7 +1400,7 @@ GameObject:
   - component: {fileID: 8840591406814744041}
   - component: {fileID: 8622890008255917614}
   m_Layer: 5
-  m_Name: Level START
+  m_Name: Game Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1621,7 +1508,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2045713943560065008}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SC_MainMenu, Assembly-CSharp
         m_MethodName: MainMenuButton
         m_Mode: 1
@@ -1758,7 +1645,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2045713943560065008}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SC_MainMenu, Assembly-CSharp
         m_MethodName: SelectLevelOne
         m_Mode: 1
@@ -1916,8 +1803,6 @@ GameObject:
   - component: {fileID: 6397914570023676950}
   - component: {fileID: 4046064449643564407}
   - component: {fileID: 334076401384161833}
-  - component: {fileID: 2045713943560065008}
-  - component: {fileID: 2793065894414901530}
   m_Layer: 5
   m_Name: In-Game Menu
   m_TagString: Untagged
@@ -2009,35 +1894,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2045713943560065008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5037900080784874708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f16f8e659dab004f881fe323bf2d0d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainMenu: {fileID: 0}
-  CreditsMenu: {fileID: 0}
-  OptionsMenu: {fileID: 0}
-  GalleryMenu: {fileID: 0}
-  LevelSelectMenu: {fileID: 8400644984907833079}
---- !u!114 &2793065894414901530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5037900080784874708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa38d4193193ee64bac1a3cc9f2c62eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5046244956885974548
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,7 +1906,7 @@ GameObject:
   - component: {fileID: 6210976683043401070}
   - component: {fileID: 5455297654925895237}
   m_Layer: 5
-  m_Name: Level1Desc
+  m_Name: KnightSelectColorText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2259,7 +2115,7 @@ GameObject:
   - component: {fileID: 5026492983591412200}
   - component: {fileID: 3816437487753693596}
   m_Layer: 5
-  m_Name: Level1Screenshot
+  m_Name: Player2PlayerPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2409,7 +2265,7 @@ GameObject:
   - component: {fileID: 5373185578149760892}
   - component: {fileID: 8730158975147363219}
   m_Layer: 5
-  m_Name: Level1Screenshot
+  m_Name: PlayerProfileBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2710,7 +2566,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3504927382582461942}
-  - {fileID: 70313170149690494}
   - {fileID: 2234655823560734892}
   - {fileID: 2108737129565031687}
   - {fileID: 7157226386056433225}
@@ -2869,7 +2724,7 @@ GameObject:
   - component: {fileID: 4721036363220627848}
   - component: {fileID: 1445825697888021957}
   m_Layer: 5
-  m_Name: Level1Desc
+  m_Name: KnightSelectColorText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3003,7 +2858,7 @@ GameObject:
   - component: {fileID: 2303119099774330788}
   - component: {fileID: 3955381829299212956}
   m_Layer: 5
-  m_Name: Level1Screenshot
+  m_Name: PlayerProfileBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3191,7 +3046,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2045713943560065008}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SC_MainMenu, Assembly-CSharp
         m_MethodName: SelectLevelOne
         m_Mode: 1
@@ -3215,7 +3070,7 @@ GameObject:
   - component: {fileID: 6320827088089354382}
   - component: {fileID: 4729178345890944631}
   m_Layer: 5
-  m_Name: Level1Desc
+  m_Name: KnightSelectColorText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
