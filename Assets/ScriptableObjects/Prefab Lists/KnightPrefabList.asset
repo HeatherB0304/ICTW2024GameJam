@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69900060a5c19841ae62013b88f035f, type: 3}
+  m_Name: KnightPrefabList
+  m_EditorClassIdentifier: 
+  knightPrefabs:
+  - {fileID: 8278251427583882966, guid: 418bc4a18ea102143a2f0442638c9331, type: 3}
+  - {fileID: 6922397913154847386, guid: 678e5eb58097b1b42a4b5ef47ffaeffa, type: 3}
+  - {fileID: 3061220238293443156, guid: ab913a9ecbd8cb74f934be6a4f091c15, type: 3}
+  - {fileID: 8250113037700411775, guid: a10bd4d09f2a4154aa2aa9a245354389, type: 3}
