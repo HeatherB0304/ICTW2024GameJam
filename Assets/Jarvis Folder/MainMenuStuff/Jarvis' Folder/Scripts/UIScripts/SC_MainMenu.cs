@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -76,13 +74,16 @@ public class SC_MainMenu : MonoBehaviour
     public void SelectLevelOne() 
     {
         SceneManager.LoadScene("Lava Level");
+        GameManager.UpdateGameState(GameState.Game);
     }
     public void SelectLevelTwo() 
     {
-        SceneManager.LoadScene("Insert Scene Name Here");
+        SceneManager.LoadScene("DevScene");
+        GameManager.UpdateGameState(GameState.Game);
     }
     public void SelectLevelThree() 
     {
         SceneManager.LoadScene("Insert Scene Name Here");
+        GameManager.UpdateGameState(GameState.Game);
     }
 }
