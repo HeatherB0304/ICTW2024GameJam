@@ -11,7 +11,7 @@ public class PartyItemSpawner : MonoBehaviour{
 	[SerializeField] private int maxItemsToSpawn;
 
 	[SerializeField] private Color gizmosColor;
-	[SerializeField] private float spawnRadius;
+	[SerializeField, Range(0f, 30f)] private float spawnRadius;
 
 	private List<PartyItemObject> currentPartyItemsSpawned = new List<PartyItemObject>();
 

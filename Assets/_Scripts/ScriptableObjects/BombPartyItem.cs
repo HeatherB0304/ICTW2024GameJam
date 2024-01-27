@@ -2,8 +2,8 @@ using System.Collections;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Party Item/Bomb Party Item", fileName = "BombPartyItem")]
-public class BombPartyItem : PartyItemSO
-{
+public class BombPartyItem : PartyItemSO{
+	[Header("Bomb Variables")]
 	public float knockBackStrength;
 	public float bombRadius;
 	public float bombDamage;

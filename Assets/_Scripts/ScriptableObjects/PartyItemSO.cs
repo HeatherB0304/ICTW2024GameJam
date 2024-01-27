@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public abstract class PartyItemSO : ScriptableObject
-{
+public abstract class PartyItemSO : ScriptableObject{
 	public string ItemName;
     public float ItemLiveTime;
+    public float ItemCooldownTime;
     public bool isGrabbable = false;
     public PartyItemObject PartyGameObjectPrefab;
 
