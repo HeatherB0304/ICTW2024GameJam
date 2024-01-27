@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a250d96a5f14cf44be502572cf83d0d, type: 3}
+  m_Name: SwordPartyItem
+  m_EditorClassIdentifier: 
+  ItemName: Sword
+  ItemLiveTime: 5
+  ItemCooldownTime: 10
+  isGrabbable: 1
+  PartyGameObjectPrefab: {fileID: 8787538621375542259, guid: a98bbf3699f40c746b6896a415bd6f89,
+    type: 3}
+  meleeDamage: 10
