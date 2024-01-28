@@ -10,33 +10,12 @@ public class CharacterMenuController : MonoBehaviour{
 	[SerializeField] private List<Image> knightImages;
 	[SerializeField] private List<Image> winKnightImages;
 	[SerializeField] private Button startGameButton;
-	[SerializeField] private PlayerManager playerManager;
-
-	private void Awake() {
-		PlayerManager.OnPlayerJoined += UpdateCharacterSelectScreen;
-		PlayerManager.OnValidGameStart += ValidGameStart;
-		PlayerManager.OnGameEnd += UpdateWinScreen;
-	}
-
-	private void OnDestroy() {
-		PlayerManager.OnPlayerJoined -= UpdateCharacterSelectScreen;
-		PlayerManager.OnValidGameStart -= ValidGameStart;
-		PlayerManager.OnGameEnd -= UpdateWinScreen;
-	}
-
-    private void UpdateWinScreen(object sender, EventArgs e){
-		var rankingList = playerManager.CurrentPlayerList;
-		rankingList = rankingList.OrderBy(x => x.currentDeathCount).ToList();
-
-		for (int i = 0; i < rankingList.Count; i++){
-			Debug.Log(rankingList[i].knightColor);
-
-			winKnightImages[i].sprite = knightPrefabList.GetKnightImage(rankingList[i].knightColor);
-			winKnightImages[i].gameObject.SetActive(true);
-		}
-    }
 
     private void Start() {
+		PlayerManager.Instance.OnPlayerJoined += UpdateCharacterSelectScreen;
+		PlayerManager.Instance.OnValidGameStart += ValidGameStart;
+		PlayerManager.Instance.OnGameEnd += UpdateWinScreen;
+
 		foreach (var image in knightImages){
 			image.gameObject.SetActive(false);
 		}
@@ -46,6 +25,24 @@ public class CharacterMenuController : MonoBehaviour{
 
 		startGameButton.interactable = false;
 	}
+
+	private void OnDestroy() {
+		PlayerManager.Instance.OnPlayerJoined -= UpdateCharacterSelectScreen;
+		PlayerManager.Instance.OnValidGameStart -= ValidGameStart;
+		PlayerManager.Instance.OnGameEnd -= UpdateWinScreen;
+	}
+
+    private void UpdateWinScreen(object sender, EventArgs e){
+		var rankingList = PlayerManager.Instance.CurrentPlayerList;
+		rankingList = rankingList.OrderBy(x => x.currentDeathCount).ToList();
+
+		for (int i = 0; i < rankingList.Count; i++){
+			Debug.Log(rankingList[i].knightColor);
+
+			winKnightImages[i].sprite = knightPrefabList.GetKnightImage(rankingList[i].knightColor);
+			winKnightImages[i].gameObject.SetActive(true);
+		}
+    }
 
 	private void ValidGameStart(object sender, EventArgs e){
         startGameButton.interactable = true;

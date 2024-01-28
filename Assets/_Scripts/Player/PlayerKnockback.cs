@@ -11,6 +11,8 @@ public class PlayerKnockback : MonoBehaviour{
 
 	private bool isDead = false;
 
+	public EventHandler OnPlayerKnockback;
+
 	private void Awake() {
 		TryGetComponent(out playerCharacterController);
 		TryGetComponent(out playerHealth);
@@ -31,9 +33,11 @@ public class PlayerKnockback : MonoBehaviour{
     }
 
     public void AddKnockBackToPlayer(Vector3 direction, float knockBackStrength){
+		if(isDead) return;
         direction.Normalize();
         if (direction.y < 0) direction.y = -direction.y; // reflect down force on the ground
         impact += direction.normalized * knockBackStrength / playerMass;
+		OnPlayerKnockback?.Invoke(this, EventArgs.Empty);
     }
 
 	private void Update() {
