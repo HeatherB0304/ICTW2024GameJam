@@ -7,13 +7,9 @@ using UnityEngine.UI;
 public class CharacterMenuController : MonoBehaviour{
 	[Header("Asset References")]
 	[SerializeField] private KnightPrefabList knightPrefabList;
-
 	[SerializeField] private List<Image> knightImages;
-
 	[SerializeField] private List<Image> winKnightImages;
-
 	[SerializeField] private Button startGameButton;
-
 	[SerializeField] private PlayerManager playerManager;
 
 	private void Awake() {
@@ -22,9 +18,15 @@ public class CharacterMenuController : MonoBehaviour{
 		PlayerManager.OnGameEnd += UpdateWinScreen;
 	}
 
+	private void OnDestroy() {
+		PlayerManager.OnPlayerJoined -= UpdateCharacterSelectScreen;
+		PlayerManager.OnValidGameStart -= ValidGameStart;
+		PlayerManager.OnGameEnd -= UpdateWinScreen;
+	}
+
     private void UpdateWinScreen(object sender, EventArgs e){
 		var rankingList = playerManager.CurrentPlayerList;
-		rankingList.OrderByDescending(x => x.currentDeathCount);
+		rankingList = rankingList.OrderBy(x => x.currentDeathCount).ToList();
 
 		for (int i = 0; i < rankingList.Count; i++){
 			Debug.Log(rankingList[i].knightColor);
@@ -50,7 +52,6 @@ public class CharacterMenuController : MonoBehaviour{
     }
 
     private void UpdateCharacterSelectScreen(object sender, PlayerManager.PlayerEventArgs e){
-
 		knightImages[e.player.playerNum].sprite = knightPrefabList.GetKnightImage(e.player.knightColor);
 		knightImages[e.player.playerNum].gameObject.SetActive(true);
     }

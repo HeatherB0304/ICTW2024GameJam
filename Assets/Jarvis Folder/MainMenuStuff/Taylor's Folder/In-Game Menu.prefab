@@ -2678,8 +2678,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SC_MainMenu, Assembly-CSharp
-        m_MethodName: MainMenuButton
+        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2891,7 +2891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: Start Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3122,6 +3122,7 @@ GameObject:
   - component: {fileID: 6397914570023676950}
   - component: {fileID: 4046064449643564407}
   - component: {fileID: 334076401384161833}
+  - component: {fileID: 7500732599472645367}
   m_Layer: 5
   m_Name: In-Game Menu
   m_TagString: Untagged
@@ -3214,6 +3215,31 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7500732599472645367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5037900080784874708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f81fb25bc7b0d47838bff43d8ad4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knightPrefabList: {fileID: 11400000, guid: 316e4fec5207496478240757b637929b, type: 2}
+  knightImages:
+  - {fileID: 1214680436383765837}
+  - {fileID: 3816437487753693596}
+  - {fileID: 3530913099297828049}
+  - {fileID: 3323458245948681642}
+  winKnightImages:
+  - {fileID: 4747148627722924504}
+  - {fileID: 4508855633738568742}
+  - {fileID: 3347473440031456299}
+  - {fileID: 789879178491942333}
+  startGameButton: {fileID: 8622890008255917614}
+  playerManager: {fileID: 0}
 --- !u!1 &5046244956885974548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3981,8 +4007,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SC_MainMenu, Assembly-CSharp
-        m_MethodName: MainMenuButton
+        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+        m_MethodName: ReplayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
