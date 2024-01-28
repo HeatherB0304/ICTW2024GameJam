@@ -8,7 +8,7 @@ public class TrapdoorTrigger : MonoBehaviour
     private Animator animator;
 
     // Time to wait before the start of each loop
-    public float idleTime = 5f; // You can adjust this value as needed
+    public float idleTime = 20f; // You can adjust this value as needed
 
     void Start()
     {
@@ -28,16 +28,22 @@ public class TrapdoorTrigger : MonoBehaviour
             yield return new WaitForSeconds(idleTime);
 
             // Play the first animation
-            PlayAnimation("downTrigger");
+            PlayAnimation("shakeTrigger");
 
-            // Wait for 20 seconds
-            yield return new WaitForSeconds(5f);
+            // Wait for 5 seconds
+            yield return new WaitForSeconds(3f);
 
             // Play the second animation
+            PlayAnimation("downTrigger");
+
+            // Wait for 5 seconds
+            yield return new WaitForSeconds(15f);
+
+            // Play the third animation
             PlayAnimation("upTrigger");
 
-            // Wait for 20 seconds
-            yield return new WaitForSeconds(5f);
+            // Wait for 5 seconds
+            yield return new WaitForSeconds(15f);
         }
     }
 
