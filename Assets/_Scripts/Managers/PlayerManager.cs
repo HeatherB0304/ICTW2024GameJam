@@ -113,9 +113,9 @@ public class PlayerManager : MonoBehaviour
 	}
 
 	public void ResetPlayerPosition(Player player){
-		// var index = currentPlayerList.IndexOf(player);
+		var index = player.playerNum;
 		
-		// player.assignedPlayerInput.transform.position = GameManager.CurrentLevel.spawnPointsLocation[index];
+		player.assignedPlayerInput.GetComponent<PlayerMovement>().UpdatePosition(GameManager.CurrentLevel.spawnPointsLocation[index]);
 	}
 
 	public void ReplayGame(){
