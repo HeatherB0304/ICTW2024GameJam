@@ -3771,6 +3771,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7031598770636133986, guid: 149d027d33d68f8448e2aeef3b999ff1,
         type: 3}
+      propertyPath: LevelSpawnPoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031598770636133986, guid: 149d027d33d68f8448e2aeef3b999ff1,
+        type: 3}
       propertyPath: LevelSpawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 5b5a5f144b18b694bac5348e5c4c4c69,
@@ -3780,6 +3785,12 @@ PrefabInstance:
       propertyPath: LevelSpawnPoints.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 7e867d779c654bd4cbd86cbc041f55c4,
+        type: 2}
+    - target: {fileID: 7031598770636133986, guid: 149d027d33d68f8448e2aeef3b999ff1,
+        type: 3}
+      propertyPath: LevelSpawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69717b7259276374f8cca9b04893d637,
         type: 2}
     - target: {fileID: 7051317575166233681, guid: 149d027d33d68f8448e2aeef3b999ff1,
         type: 3}
