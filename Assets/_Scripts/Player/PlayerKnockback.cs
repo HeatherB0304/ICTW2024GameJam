@@ -33,6 +33,7 @@ public class PlayerKnockback : MonoBehaviour{
     }
 
     public void AddKnockBackToPlayer(Vector3 direction, float knockBackStrength){
+		if(isDead) return;
         direction.Normalize();
         if (direction.y < 0) direction.y = -direction.y; // reflect down force on the ground
         impact += direction.normalized * knockBackStrength / playerMass;

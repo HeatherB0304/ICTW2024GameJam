@@ -139,7 +139,9 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     public void UpdatePosition(Vector3 pos){
-        characterController.Move(pos);
+        characterController.enabled = false;
+        transform.position = pos + Vector3.up;
+        characterController.enabled = true;
     }
 
     private void UpdateRotation(Vector3 movementDirection){
