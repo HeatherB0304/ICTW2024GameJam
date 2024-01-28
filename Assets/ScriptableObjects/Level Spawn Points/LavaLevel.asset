@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: LavaLevel
   m_EditorClassIdentifier: 
   LevelName: Lava Level
-  spawnPointsLocation: []
+  LevelTime: 0
+  spawnPointsLocation:
+  - {x: 41.0366, y: 1.280993, z: -22.360823}
+  - {x: 15.036598, y: 1.280993, z: 2.1391773}
+  - {x: 14.786598, y: 1.280993, z: -21.860823}
+  - {x: 40.7866, y: 1.280993, z: 2.8891773}
