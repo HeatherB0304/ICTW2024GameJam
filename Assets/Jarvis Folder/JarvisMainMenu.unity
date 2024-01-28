@@ -3790,7 +3790,7 @@ PrefabInstance:
         type: 3}
       propertyPath: LevelSpawnPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 69717b7259276374f8cca9b04893d637,
+      objectReference: {fileID: 11400000, guid: 73fb789a4bba4f5479b5f259c670b37d,
         type: 2}
     - target: {fileID: 7051317575166233681, guid: 149d027d33d68f8448e2aeef3b999ff1,
         type: 3}
