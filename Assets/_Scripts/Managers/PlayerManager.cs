@@ -118,6 +118,10 @@ public class PlayerManager : MonoBehaviour
 		// player.assignedPlayerInput.transform.position = GameManager.CurrentLevel.spawnPointsLocation[index];
 	}
 
+	public void ReplayGame(){
+		GameManager.UpdateGameState(GameState.MainMenu);
+	}
+
     private void StartGameTimer(){
         StartCoroutine(GameTimer());
     }

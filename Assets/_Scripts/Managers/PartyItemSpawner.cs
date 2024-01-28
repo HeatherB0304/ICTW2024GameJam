@@ -27,6 +27,8 @@ public class PartyItemSpawner : MonoBehaviour{
 
 	private void OnDestroy() {
 		StopAllCoroutines();
+		PlayerManager.OnGameStart -= (object sender, EventArgs e) => {StartCoroutine(PartyItemSpawnCorutine());};
+		PlayerManager.OnGameEnd -= (object sender, EventArgs e) => {StopAllCoroutines();};
 	}
 
 	public void RemovePartyItem(PartyItemObject partyItemObject){
