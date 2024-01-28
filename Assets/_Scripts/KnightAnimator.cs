@@ -11,8 +11,9 @@ public class KnightAnimator : MonoBehaviour {
     private void Start() {
         playerMovement.OnMove += PlayMoveAnimation;
         playerHealth.OnDeath += PlayerDeathAnimation;
+        playerHealth.OnRespawn += PlayerDeathAnimation;
         playerKnockback.OnPlayerKnockback += PlayDizzyAnimation;
-        knightAnimator = GetComponent<Animator>(); // Assuming Animator is attached to the same GameObject as this script.
+        knightAnimator = transform.GetChild(0).GetComponent<Animator>(); // Assuming Animator is attached to the same GameObject as this script.
     }
 
     private void OnDestroy() {
@@ -33,6 +34,10 @@ public class KnightAnimator : MonoBehaviour {
 
     private void PlayerDeathAnimation(object sender, EventArgs e) {
         // Set the "IsDead" trigger in the animator to transition to the death animation.
-        knightAnimator.SetTrigger("IsDead");
+        knightAnimator.SetBool("IsDead", true);
+    }
+
+    private void PlayerRespawnAnimation(object sender, EventArgs e){
+        knightAnimator.SetBool("IsDead", false);
     }
 }
