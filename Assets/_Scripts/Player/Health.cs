@@ -50,10 +50,10 @@ public class Health : MonoBehaviour
 	public void Die(){
 		if(isDead) return;
 		isDead = true;
-		OnDeath?.Invoke(this, EventArgs.Empty);
 		currentPlayer ??= playerManager.GetPlayerFromPlayerInput(gameObject.GetComponent<PlayerInput>());
 		currentPlayer.currentDeathCount++;
 
+		OnDeath?.Invoke(this, EventArgs.Empty);
 		StartCoroutine(RespawnTimer());
 	}
 

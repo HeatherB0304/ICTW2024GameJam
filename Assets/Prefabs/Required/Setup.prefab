@@ -782,6 +782,7 @@ MonoBehaviour:
   PlayerHeadShot: {fileID: 5542087662120671321}
   HealthBarSlider: {fileID: 1098613649679707744}
   PlayerDeathCount: {fileID: 3204411554988111237}
+  healthFillSpeed: 5
 --- !u!114 &4034311684553685616 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7287945763695876353, guid: e6cb83c7b755c3443a9b8eecb6e48f9f,
@@ -817,6 +818,7 @@ MonoBehaviour:
   PlayerHeadShot: {fileID: 3914003377659870566}
   HealthBarSlider: {fileID: 3403210414038492268}
   PlayerDeathCount: {fileID: 5023934043237386691}
+  healthFillSpeed: 5
 --- !u!114 &4965900489109160949 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1600274552538669188, guid: e6cb83c7b755c3443a9b8eecb6e48f9f,
@@ -876,6 +878,7 @@ MonoBehaviour:
   PlayerHeadShot: {fileID: 1190141899469784144}
   HealthBarSlider: {fileID: 4034311684553685616}
   PlayerDeathCount: {fileID: 2094246369367790377}
+  healthFillSpeed: 5
 --- !u!114 &5364059164121561793 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1778862989810899376, guid: e6cb83c7b755c3443a9b8eecb6e48f9f,
@@ -929,6 +932,7 @@ MonoBehaviour:
   PlayerHeadShot: {fileID: 6642025070901695477}
   HealthBarSlider: {fileID: 2571605328420934842}
   PlayerDeathCount: {fileID: 1319474120101873882}
+  healthFillSpeed: 5
 --- !u!114 &6642025070901695477 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1076935945144889476, guid: e6cb83c7b755c3443a9b8eecb6e48f9f,
