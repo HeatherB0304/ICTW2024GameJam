@@ -11,13 +11,13 @@ public class PlayerManager : MonoBehaviour
 
 	public List<Player> CurrentPlayerList => currentPlayerList;
 
-	public static event EventHandler<PlayerEventArgs> OnPlayerJoined;
-	public static event EventHandler<PlayerEventArgs> OnPlayerLeave;
-	public static event EventHandler OnValidGameStart;
-	public static event EventHandler OnShowCharacterScreen;
-	public static event EventHandler OnHideCharacterScreen;
-	public static event EventHandler OnGameStart;
-	public static event EventHandler OnGameEnd;
+	public event EventHandler<PlayerEventArgs> OnPlayerJoined;
+	public event EventHandler<PlayerEventArgs> OnPlayerLeave;
+	public event EventHandler OnValidGameStart;
+	public event EventHandler OnShowCharacterScreen;
+	public event EventHandler OnHideCharacterScreen;
+	public event EventHandler OnGameStart;
+	public event EventHandler OnGameEnd;
 
 	public class PlayerEventArgs : EventArgs{
 		public Player player;
@@ -120,6 +120,10 @@ public class PlayerManager : MonoBehaviour
 
 	public void ReplayGame(){
 		GameManager.UpdateGameState(GameState.MainMenu);
+	}
+
+	public int GetPlayerIndex(Player player){
+		return currentPlayerList.IndexOf(player);
 	}
 
     private void StartGameTimer(){
