@@ -13,12 +13,20 @@ public class KnightAnimator : MonoBehaviour{
 		playerKnockback.OnPlayerKnockback += PlayDizzyAnimation;
 	}
 
+	private void OnDestroy() {
+		playerMovement.OnMove -= PlayMoveAnimation;
+		playerHealth.OnDeath -= PlayerDeathAnimation;
+		playerKnockback.OnPlayerKnockback -= PlayDizzyAnimation;
+	}
+
     private void PlayMoveAnimation(float movementStrength){
 		if(movementStrength == 0){
 			//Play Idle
+
 		}   
 		else{
 			//Play Movement
+			
 		}
     }
 
