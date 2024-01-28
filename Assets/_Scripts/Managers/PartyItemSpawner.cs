@@ -16,14 +16,14 @@ public class PartyItemSpawner : MonoBehaviour{
 	private List<PartyItemObject> currentPartyItemsSpawned = new List<PartyItemObject>();
 
 	private void Start() {
-		PlayerManager.OnGameStart += (object sender, EventArgs e) => {StartCoroutine(PartyItemSpawnCorutine());};
-		PlayerManager.OnGameEnd += (object sender, EventArgs e) => {StopAllCoroutines();};
+		PlayerManager.Instance.OnGameStart += (object sender, EventArgs e) => {StartCoroutine(PartyItemSpawnCorutine());};
+		PlayerManager.Instance.OnGameEnd += (object sender, EventArgs e) => {StopAllCoroutines();};
 	}
 
 	private void OnDestroy() {
 		StopAllCoroutines();
-		PlayerManager.OnGameStart -= (object sender, EventArgs e) => {StartCoroutine(PartyItemSpawnCorutine());};
-		PlayerManager.OnGameEnd -= (object sender, EventArgs e) => {StopAllCoroutines();};
+		PlayerManager.Instance.OnGameStart -= (object sender, EventArgs e) => {StartCoroutine(PartyItemSpawnCorutine());};
+		PlayerManager.Instance.OnGameEnd -= (object sender, EventArgs e) => {StopAllCoroutines();};
 	}
 
 	private IEnumerator PartyItemSpawnCorutine(){

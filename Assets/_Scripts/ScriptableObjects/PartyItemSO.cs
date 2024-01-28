@@ -5,6 +5,7 @@ public abstract class PartyItemSO : ScriptableObject{
     public float ItemLiveTime;
     public float ItemCooldownTime;
     public bool isGrabbable = false;
+    public bool doesDespawn = false;
     public PartyItemObject PartyGameObjectPrefab;
 
     public virtual void UseItem(Transform userTransfrom) { }

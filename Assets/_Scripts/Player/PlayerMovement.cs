@@ -39,12 +39,18 @@ public class PlayerMovement : MonoBehaviour{
 
     private void Start() {
 		mainCamera = Camera.main;
-        PlayerManager.OnGameStart += (object sender, EventArgs e) => canMove = true; 
-        PlayerManager.OnGameEnd += (object sender, EventArgs e) => {canMove = false;
+        PlayerManager.Instance.OnGameStart += (object sender, EventArgs e) => canMove = true; 
+        PlayerManager.Instance.OnGameEnd += (object sender, EventArgs e) => {canMove = false;
                                                                     currentMovementDirection = Vector3.zero;}; 
         playerHealth.OnDeath += (object sender, EventArgs e) => canMove = false; 
         playerHealth.OnRespawn += (object sender, EventArgs e) => canMove = true; 
 	}
+
+    private void OnDestroy() {
+        PlayerManager.Instance.OnGameStart -= (object sender, EventArgs e) => canMove = true; 
+        PlayerManager.Instance.OnGameEnd -= (object sender, EventArgs e) => {canMove = false;
+                                                                    currentMovementDirection = Vector3.zero;};
+    }
 
     private void Update() {
         if(canMove){

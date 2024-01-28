@@ -14,4 +14,15 @@ public class KnightPrefabList : ScriptableObject{
 	public Sprite GetKnightImage(KnightColor knightColor){
 		return knightImages[(int)knightColor];
 	}
+
+	public Color GetColorFromKnightColor(KnightColor knightColor){
+        return knightColor switch{
+            KnightColor.Blue => Color.blue,
+            KnightColor.Yellow => Color.yellow,
+            KnightColor.Green => Color.green,
+            KnightColor.Pink => Color.magenta,
+            KnightColor.White => Color.white,
+            _ => Color.red,
+        };
+    }
 }

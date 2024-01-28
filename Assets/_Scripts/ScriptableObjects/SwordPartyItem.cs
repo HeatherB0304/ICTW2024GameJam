@@ -11,4 +11,6 @@ public class SwordPartyItem : PartyItemSO{
 
 		return swordInstance;
     }
+
+	
 }
