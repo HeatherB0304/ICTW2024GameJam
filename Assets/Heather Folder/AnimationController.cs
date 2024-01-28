@@ -8,7 +8,7 @@ public class AnimationController : MonoBehaviour
     private Animator animator;
 
     // Time to wait before the start of each loop
-    public float idleTime = 30f; // You can adjust this value as needed
+    public float idleTime = 20f; // You can adjust this value as needed
 
     void Start()
     {
@@ -31,13 +31,13 @@ public class AnimationController : MonoBehaviour
             PlayAnimation("upTrigger");
 
             // Wait for 20 seconds
-            yield return new WaitForSeconds(20f);
+            yield return new WaitForSeconds(30f);
 
             // Play the second animation
             PlayAnimation("downTrigger");
 
             // Wait for 20 seconds
-            yield return new WaitForSeconds(20f);
+            yield return new WaitForSeconds(10f);
         }
     }
 
