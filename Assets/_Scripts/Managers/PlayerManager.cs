@@ -68,6 +68,16 @@ public class PlayerManager : MonoBehaviour
 
 	public void StartGame(){
 		HideCharacterScreen();
+		SetStartingPlayerPositions();
 		OnGameStart?.Invoke(this, EventArgs.Empty);
 	}
+
+    private void SetStartingPlayerPositions(){
+		//Has valid spawn point count
+		if(GameManager.CurrentLevel != null && GameManager.CurrentLevel.spawnPointsLocation.Count == 4){
+			for (int i = 0; i < currentPlayerList.Count; i++){
+				currentPlayerList[i].assignedPlayerInput.GetComponent<PlayerMovement>().UpdatePosition(GameManager.CurrentLevel.spawnPointsLocation[i]);
+			}
+		}
+    }
 }
