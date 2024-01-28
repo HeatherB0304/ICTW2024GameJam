@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DevScene
   m_EditorClassIdentifier: 
   LevelName: DevScene
-  LevelTime: 5
+  LevelTime: 15
   spawnPointsLocation:
   - {x: -7.55, y: 0, z: -7.85}
   - {x: 9.47, y: 0, z: 7.56}

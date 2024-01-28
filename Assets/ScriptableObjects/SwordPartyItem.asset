@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: SwordPartyItem
   m_EditorClassIdentifier: 
   ItemName: Sword
-  ItemLiveTime: 5
+  ItemLiveTime: 2
   ItemCooldownTime: 10
   isGrabbable: 1
+  doesDespawn: 1
   PartyGameObjectPrefab: {fileID: 8787538621375542259, guid: a98bbf3699f40c746b6896a415bd6f89,
     type: 3}
   meleeDamage: 10
