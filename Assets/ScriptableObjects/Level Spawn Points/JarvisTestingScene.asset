@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6cf10f5e7beb0544b50b1d21e4be43a, type: 3}
-  m_Name: Guardian Scene
+  m_Name: JarvisTestingScene
   m_EditorClassIdentifier: 
-  LevelName: Guardian
-  LevelTime: 90
+  LevelName: JarvisTestingScene
+  LevelTime: 0
   spawnPointsLocation:
-  - {x: 46.403854, y: 2.2562456, z: -12.926313}
-  - {x: 12.841458, y: 4.2999997, z: -11.944553}
-  - {x: 29.091457, y: 4.2999997, z: -26.694553}
-  - {x: 28.5, y: 2.43, z: 2.77}
+  - {x: 0, y: 0.5, z: 0}
+  - {x: 1, y: 0.5, z: 1}
+  - {x: 2, y: 0.5, z: 2}
+  - {x: 3, y: 0.5, z: 3}
