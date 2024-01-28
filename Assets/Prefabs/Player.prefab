@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -7439954391409412848}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 7
   accelerationSpeed: 10
+  rotationSpeed: 5
   groundedOffset: -0.14
   groundedRadius: 0.5
   groundLayers:
@@ -166,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
+  respawnTime: 1.5
 --- !u!114 &1003018846476588699
 MonoBehaviour:
   m_ObjectHideFlags: 0
