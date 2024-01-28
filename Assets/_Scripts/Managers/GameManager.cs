@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.SceneManagement;
 
 public static class GameManager{
 	public static event Action<GameState> OnGameStateChange;
@@ -12,7 +13,7 @@ public static class GameManager{
 		CurrentState = state;
 
         switch (CurrentState){
-            case GameState.MainMenu:
+            case GameState.MainMenu: HandleMainMenu();
                 break;
             case GameState.Game: 
                 break;
@@ -22,8 +23,12 @@ public static class GameManager{
 
         OnGameStateChange?.Invoke(state);
     }
-	
-	public static void UpdateCurrentLevel(LevelSpawnPoints incomingLevel){
+
+    private static void HandleMainMenu(){
+		SceneManager.LoadScene("JarvisMainMenu");
+    }
+
+    public static void UpdateCurrentLevel(LevelSpawnPoints incomingLevel){
 		CurrentLevel = incomingLevel;
 		OnUpdateCurrentLevel?.Invoke(null, EventArgs.Empty);
 	}
