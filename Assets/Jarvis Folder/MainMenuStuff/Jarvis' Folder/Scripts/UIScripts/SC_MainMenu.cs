@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,9 +10,10 @@ public class SC_MainMenu : MonoBehaviour
     public GameObject GalleryMenu;
     public GameObject LevelSelectMenu;
 
+    public List<LevelSpawnPoints> LevelSpawnPoints;
+
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         MainMenuButton();
     }
 
@@ -73,17 +75,26 @@ public class SC_MainMenu : MonoBehaviour
     //Level Select
     public void SelectLevelOne() 
     {
-        SceneManager.LoadScene("Lava Level");
-        GameManager.UpdateGameState(GameState.Game);
+        if(LevelSpawnPoints[0] != null){
+            SceneManager.LoadScene(LevelSpawnPoints[0].LevelName);
+            GameManager.UpdateGameState(GameState.Game);
+            GameManager.UpdateCurrentLevel(LevelSpawnPoints[0]);
+        }
     }
     public void SelectLevelTwo() 
     {
-        SceneManager.LoadScene("DevScene");
-        GameManager.UpdateGameState(GameState.Game);
+        if(LevelSpawnPoints[1] != null){
+            SceneManager.LoadScene(LevelSpawnPoints[1].LevelName);
+            GameManager.UpdateGameState(GameState.Game);
+            GameManager.UpdateCurrentLevel(LevelSpawnPoints[1]);
+        }
     }
     public void SelectLevelThree() 
     {
-        SceneManager.LoadScene("Insert Scene Name Here");
-        GameManager.UpdateGameState(GameState.Game);
+        if(LevelSpawnPoints[2] != null){
+            SceneManager.LoadScene(LevelSpawnPoints[2].LevelName);
+            GameManager.UpdateGameState(GameState.Game);
+            GameManager.UpdateCurrentLevel(LevelSpawnPoints[2]);
+        }
     }
 }

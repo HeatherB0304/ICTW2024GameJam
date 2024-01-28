@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour{
@@ -25,10 +26,13 @@ public class PlayerMovement : MonoBehaviour{
 
     private bool grounded = false;
 
+    private bool startedGame = false;
+
     private Camera mainCamera;
 
     private void Awake() {
         TryGetComponent(out characterController);
+        PlayerManager.OnGameStart += (object sender, EventArgs e) => startedGame = true; 
     }
 
     private void Start() {
@@ -36,9 +40,11 @@ public class PlayerMovement : MonoBehaviour{
 	}
 
     private void Update() {
-        GroundCheck();
-        Gravity();
-        Move();
+        if(startedGame){
+            GroundCheck();
+            Gravity();
+            Move();
+        }
     }
 
     private void Gravity(){
@@ -112,6 +118,10 @@ public class PlayerMovement : MonoBehaviour{
         
         characterController.Move(targetVector * (currentSpeed * Time.deltaTime) + new Vector3(0f, verticalVelocity, 0f) * Time.deltaTime);
         UpdateRotation(targetVector);
+    }
+
+    public void UpdatePosition(Vector3 pos){
+        characterController.Move(pos);
     }
 
     private void UpdateRotation(Vector3 movementDirection){
