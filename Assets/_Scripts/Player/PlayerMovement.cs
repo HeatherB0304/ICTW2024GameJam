@@ -26,21 +26,28 @@ public class PlayerMovement : MonoBehaviour{
 
     private bool grounded = false;
 
-    private bool startedGame = false;
+    private bool canMove = false;
 
     private Camera mainCamera;
 
+    private Health playerHealth;
+
     private void Awake() {
         TryGetComponent(out characterController);
-        PlayerManager.OnGameStart += (object sender, EventArgs e) => startedGame = true; 
+        TryGetComponent(out playerHealth);
     }
 
     private void Start() {
 		mainCamera = Camera.main;
+        PlayerManager.OnGameStart += (object sender, EventArgs e) => canMove = true; 
+        PlayerManager.OnGameEnd += (object sender, EventArgs e) => {canMove = false;
+                                                                    currentMovementDirection = Vector3.zero;}; 
+        playerHealth.OnDeath += (object sender, EventArgs e) => canMove = false; 
+        playerHealth.OnRespawn += (object sender, EventArgs e) => canMove = true; 
 	}
 
     private void Update() {
-        if(startedGame){
+        if(canMove){
             GroundCheck();
             Gravity();
             Move();

@@ -17,6 +17,7 @@ public class PartyItemSpawner : MonoBehaviour{
 
 	private void Start() {
 		PlayerManager.OnGameStart += (object sender, EventArgs e) => {StartCoroutine(PartyItemSpawnCorutine());};
+		PlayerManager.OnGameEnd += (object sender, EventArgs e) => {StopAllCoroutines();};
 	}
 
 	private IEnumerator PartyItemSpawnCorutine(){

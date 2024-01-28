@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,12 +7,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
+	public static PlayerManager Instance;
+
+	public List<Player> CurrentPlayerList => currentPlayerList;
+
 	public static event EventHandler<PlayerEventArgs> OnPlayerJoined;
 	public static event EventHandler<PlayerEventArgs> OnPlayerLeave;
 	public static event EventHandler OnValidGameStart;
 	public static event EventHandler OnShowCharacterScreen;
 	public static event EventHandler OnHideCharacterScreen;
 	public static event EventHandler OnGameStart;
+	public static event EventHandler OnGameEnd;
 
 	public class PlayerEventArgs : EventArgs{
 		public Player player;
@@ -21,11 +27,24 @@ public class PlayerManager : MonoBehaviour
 	}
 
 	[SerializeField] private GameObject characterSelectScreen;
+	[SerializeField] private GameObject winScreen;
 
 	[SerializeField] private List<Player> currentPlayerList;
 
 	private void Awake() {
 		currentPlayerList = new List<Player>();
+
+		if(Instance == null){
+			Instance = this;
+		}
+		else{
+			Destroy(gameObject);
+		}
+	}
+
+	private void Start() {
+		ShowCharacterScreen();
+		HideWinScreen();
 	}
 
 	public void OnSceneLoad(GameState state){
@@ -36,12 +55,22 @@ public class PlayerManager : MonoBehaviour
 
     public void ShowCharacterScreen(){
 		characterSelectScreen.SetActive(true);
+		HideWinScreen();
 		OnShowCharacterScreen?.Invoke(this, EventArgs.Empty);
     }
 
 	public void HideCharacterScreen(){
 		characterSelectScreen.SetActive(false);
 		OnShowCharacterScreen?.Invoke(this, EventArgs.Empty);
+	}
+	
+	public void ShowWinScreen(){
+		winScreen.SetActive(true);
+		HideCharacterScreen();
+	}
+
+	public void HideWinScreen(){
+		winScreen.SetActive(false);
 	}
 
     public void AddNewPlayer(PlayerInput playerInput){
@@ -69,8 +98,29 @@ public class PlayerManager : MonoBehaviour
 	public void StartGame(){
 		HideCharacterScreen();
 		SetStartingPlayerPositions();
+		StartGameTimer();
 		OnGameStart?.Invoke(this, EventArgs.Empty);
 	}
+
+	public Player GetPlayerFromPlayerInput(PlayerInput playerInput){
+		foreach (var player in currentPlayerList){
+			if(player.assignedPlayerInput == playerInput){
+				return player;
+			}
+		}
+
+		return null;
+	}
+
+	public void ResetPlayerPosition(Player player){
+		// var index = currentPlayerList.IndexOf(player);
+		
+		// player.assignedPlayerInput.transform.position = GameManager.CurrentLevel.spawnPointsLocation[index];
+	}
+
+    private void StartGameTimer(){
+        StartCoroutine(GameTimer());
+    }
 
     private void SetStartingPlayerPositions(){
 		//Has valid spawn point count
@@ -80,4 +130,10 @@ public class PlayerManager : MonoBehaviour
 			}
 		}
     }
+
+	private IEnumerator GameTimer(){
+		yield return new WaitForSeconds(GameManager.CurrentLevel.LevelTime);
+		ShowWinScreen();
+		OnGameEnd?.Invoke(this, EventArgs.Empty);
+	}
 }
