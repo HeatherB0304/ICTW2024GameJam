@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour{
     private Vector2 currentMovementDirection;
     private CharacterController characterController;
 
+    public event Action<float> OnMove;
+
     private const float terminalVelocity = 53f;
     private float currentSpeed;
     private float verticalVelocity;
@@ -39,12 +41,18 @@ public class PlayerMovement : MonoBehaviour{
 
     private void Start() {
 		mainCamera = Camera.main;
-        PlayerManager.OnGameStart += (object sender, EventArgs e) => canMove = true; 
-        PlayerManager.OnGameEnd += (object sender, EventArgs e) => {canMove = false;
+        PlayerManager.Instance.OnGameStart += (object sender, EventArgs e) => canMove = true; 
+        PlayerManager.Instance.OnGameEnd += (object sender, EventArgs e) => {canMove = false;
                                                                     currentMovementDirection = Vector3.zero;}; 
         playerHealth.OnDeath += (object sender, EventArgs e) => canMove = false; 
         playerHealth.OnRespawn += (object sender, EventArgs e) => canMove = true; 
 	}
+
+    private void OnDestroy() {
+        PlayerManager.Instance.OnGameStart -= (object sender, EventArgs e) => canMove = true; 
+        PlayerManager.Instance.OnGameEnd -= (object sender, EventArgs e) => {canMove = false;
+                                                                    currentMovementDirection = Vector3.zero;};
+    }
 
     private void Update() {
         if(canMove){
@@ -82,7 +90,10 @@ public class PlayerMovement : MonoBehaviour{
         return new Vector3(transform.position.x, transform.position.y - groundedOffset, transform.position.z);
     }
 
-    public void SetInputVector(Vector2 movement) => currentMovementDirection = movement;
+    public void SetInputVector(Vector2 movement){
+        currentMovementDirection = movement;
+        OnMove?.Invoke(currentMovementDirection.magnitude);
+    } 
     
     private void Move(){
         float targetSpeed = movementSpeed;
@@ -128,7 +139,9 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     public void UpdatePosition(Vector3 pos){
-        characterController.Move(pos);
+        characterController.enabled = false;
+        transform.position = pos + Vector3.up;
+        characterController.enabled = true;
     }
 
     private void UpdateRotation(Vector3 movementDirection){

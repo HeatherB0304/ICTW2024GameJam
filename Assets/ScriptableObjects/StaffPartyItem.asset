@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: StaffPartyItem
   m_EditorClassIdentifier: 
   ItemName: Ice Staff
-  ItemLiveTime: 12
+  ItemLiveTime: 3
   ItemCooldownTime: 3
   isGrabbable: 1
+  doesDespawn: 1
   PartyGameObjectPrefab: {fileID: 7966786188691291670, guid: d65803b19b52ef0479a765876c33d917,
     type: 3}
   iceBallDamageAbount: 10

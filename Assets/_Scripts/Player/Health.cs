@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Health : MonoBehaviour
 {
-	public event EventHandler OnDamageRecieved;
+	public event EventHandler OnHealthValueChanged;
 	public event EventHandler OnDeath;
 	public event EventHandler OnRespawn;
 
@@ -29,7 +29,11 @@ public class Health : MonoBehaviour
 
 	private void Awake() {
 		currentHealth = maxHealth;
+	}
+
+	private void Start() {
 		playerManager = PlayerManager.Instance;
+		OnHealthValueChanged?.Invoke(this, null);
 	}
 
 	public void DealDamage(float amount){
@@ -39,17 +43,17 @@ public class Health : MonoBehaviour
 			return;
 		}
 		else{
-			OnDamageRecieved?.Invoke(this, new DamageRecievedEventArgs(amount));
+			OnHealthValueChanged?.Invoke(this, new DamageRecievedEventArgs(amount));
 		}
 	}
 
 	public void Die(){
 		if(isDead) return;
 		isDead = true;
-		OnDeath?.Invoke(this, EventArgs.Empty);
 		currentPlayer ??= playerManager.GetPlayerFromPlayerInput(gameObject.GetComponent<PlayerInput>());
 		currentPlayer.currentDeathCount++;
 
+		OnDeath?.Invoke(this, EventArgs.Empty);
 		StartCoroutine(RespawnTimer());
 	}
 
@@ -57,11 +61,17 @@ public class Health : MonoBehaviour
 		playerManager.ResetPlayerPosition(currentPlayer);
 		
 		isDead = false;
+		currentHealth = maxHealth;
 		OnRespawn?.Invoke(this, EventArgs.Empty);
+		OnHealthValueChanged?.Invoke(this, EventArgs.Empty);
 	}
 
 	public IEnumerator RespawnTimer(){
 		yield return new WaitForSeconds(respawnTime);
 		Respawn();
+	}
+
+	public float GetHealthTarget(){
+		return currentHealth / maxHealth;
 	}
 }
