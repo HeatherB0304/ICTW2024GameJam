@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62c39bcced041ce4d9425c1295a9246d, type: 3}
-  m_Name: DevLevel
+  m_Script: {fileID: 11500000, guid: d6cf10f5e7beb0544b50b1d21e4be43a, type: 3}
+  m_Name: DevScene
   m_EditorClassIdentifier: 
   LevelName: DevScene
-  spawnPointsLocation:
-  - {x: -7.55, y: 0, z: -7.85}
-  - {x: 9.47, y: 0, z: 7.56}
-  - {x: -7.47, y: 0, z: 8.39}
-  - {x: 7.92, y: 0, z: -7.19}
+  LevelTime: 0
+  spawnPointsLocation: []

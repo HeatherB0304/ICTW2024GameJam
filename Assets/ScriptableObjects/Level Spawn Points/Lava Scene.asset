@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62c39bcced041ce4d9425c1295a9246d, type: 3}
-  m_Name: LavaLevel
+  m_Script: {fileID: 11500000, guid: d6cf10f5e7beb0544b50b1d21e4be43a, type: 3}
+  m_Name: Lava Scene
   m_EditorClassIdentifier: 
   LevelName: Lava Level
   LevelTime: 0
-  spawnPointsLocation:
-  - {x: 41.0366, y: 1.280993, z: -22.360823}
-  - {x: 15.036598, y: 1.280993, z: 2.1391773}
-  - {x: 14.786598, y: 1.280993, z: -21.860823}
-  - {x: 40.7866, y: 1.280993, z: 2.8891773}
+  spawnPointsLocation: []
