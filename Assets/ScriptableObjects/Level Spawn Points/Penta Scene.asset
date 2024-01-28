@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6cf10f5e7beb0544b50b1d21e4be43a, type: 3}
-  m_Name: Lava Scene
+  m_Name: Penta Scene
   m_EditorClassIdentifier: 
-  LevelName: Lava Level
+  LevelName: Penta-Buster
   LevelTime: 0
   spawnPointsLocation:
-  - {x: 40.60447, y: 1.800003, z: -23.302544}
-  - {x: 15.854469, y: 1.800003, z: 1.6974564}
-  - {x: 14.354469, y: 1.800003, z: -22.802544}
-  - {x: 40.10447, y: 1.800003, z: 0.69745636}
+  - {x: 41.93, y: 1.0499992, z: -22.413296}
+  - {x: 20.430002, y: 4.55, z: -21.230001}
+  - {x: 28.430326, y: 5.8, z: -9.330004}
+  - {x: 41.180405, y: 3.0500002, z: -9.080005}

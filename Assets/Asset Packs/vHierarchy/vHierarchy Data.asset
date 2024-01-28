@@ -15,6 +15,8 @@ MonoBehaviour:
   sceneDatasByGuid:
     keys:
     - 71aabd8a8d2c3b347b17e630856b67e4
+    - 5b7b08e625c999f4da4cd35ffa4a797f
+    - 3be6e897566b9e346917dd41065dd629
     values:
     - goDatasByGlobalId:
         keys:
@@ -26,9 +28,35 @@ MonoBehaviour:
         - iColor: 9
           icon: Folder Icon
       goDatasByInstanceId:
-        keys: 9ed1feff0cd1feff
+        keys: fc9200000e9300001c9b00002e9b0000
         values:
         - iColor: 2
           icon: Folder Icon
         - iColor: 9
           icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 9
+          icon: Folder Icon
+    - goDatasByGlobalId:
+        keys:
+        - GlobalObjectId_V1-2-5b7b08e625c999f4da4cd35ffa4a797f-1656593036-0
+        - GlobalObjectId_V1-2-5b7b08e625c999f4da4cd35ffa4a797f-2108707367-0
+        values:
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 9
+          icon: Folder Icon
+      goDatasByInstanceId:
+        keys: 269f0000349f0000
+        values:
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 9
+          icon: Folder Icon
+    - goDatasByGlobalId:
+        keys: []
+        values: []
+      goDatasByInstanceId:
+        keys: 
+        values: []
